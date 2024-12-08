@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pickup or Delivery</title>
+  <style>
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta content="width=device-width, initial-scale=1.0">
+
+    <style>
+    
+        html, body {
+            height: 100%; 
+            margin: 0;
+            background-color: #2E2B29;
+        }
+        
+         body {
+            margin: 0;
+            font-family: Garamond;
+            font-size: 15px;
+            scroll-behavior: smooth;
+            background-color: #2E2B29;
+         }
+
+        /* Header */
+        .title {
+            float: top;
+            font-family: brush script 'Gill Sans MT';
+            font-size: 55px;
+            text-align: center;
+            color: #BFA07B;
+        }
+
+        .vegan {
+            font-family: Garamond;
+            color: #798526;
+            font-size: 25px;
+            text-align: center;
+            flex: 1;
+        }
+        
+        .forms-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px; 
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        
+        .contact {
+            max-width: 45%;
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            background-color: #4A4137;
+            color: #E8E2D2;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border: 10px solid #7B853A;
+            border-radius: 15px;
+        }
+        
+        .contact h2 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .pay {
+            max-width: 45%;
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            background-color: #4A4137;
+            color: #E8E2D2;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border: 10px solid #7B853A;
+            border-radius: 15px;
+        }
+        
+        .pay h2 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .input-box {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .input-box label {
+            margin-bottom: 5px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .input-box input {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #7B853A;
+            border-radius: 5px;
+            background-color: #E8E2D2;
+            color: #27221c;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .input-box input:focus {
+            border-color: #798526;
+            outline: none;
+        }
+
+        
+        /*for the hiddent div*/
+        .container {
+          max-width: 800px;
+          width: 80%
+          margin: 0 auto;
+          padding: 20px;
+          text-align: center;
+        }
+        
+        .cart {
+            width: 60%
+        }
+        
+        .cart h2 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #E8E2D2;
+        }
+        
+        .submitbutton {
+          display: inline-block;
+          padding: 8px 16px;
+          background-color: #D1C7B7;
+          color: white;
+          font-size: 15px;
+          font-weight: bold;
+          text-align: center;
+          text-decoration: none;
+          border-radius: 5px;
+          transition: background-color 0.3s ease, transform 0.3s ease;
+          margin-top: 10px;
+        }
+        
+        .submitbutton:hover {
+          transform: scale(1.05); 
+        }
+        
+        .submitbutton:active {
+          transform: scale(0.98);
+        }
+    
+    
+    #addressDisplay {
+      display: none;
+      font-size: 18px;
+      color: #E8E2D2;
+      font-family: Garamond;
+      margin-top: 5px;
+      text-align: center;
+    }
+    
+    #cartButton {
+        padding: 9px 19px;
+        font-family: Garamond;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        margin: 10px auto; /* Centers the button horizontally */
+        display: block; /* Makes the button behave like a block element */
+        width: 150px; /* Optional: Define a fixed width */
+        text-align: center; /* Ensures text is centered inside the button */
+        transition: background-color 0.3s ease;
+    }
+
+    #cartButton:hover {
+      background-color: #45a049;
+    }
+    
+    #cart {
+      display:none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%
+      max-width:500px;
+      height: auto;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+      height: 150px;
+      background-color: #6F5B4A;
+      z-index:1000;
+      border-radius: 5px;
+    }    
+  </style>
+</head>
+
+
+<body>
+     <!-- Title -->
+    <div class="title">
+        <br>
+        <i><b>Place Your Order</b></i>
+    </div>
+    <div class="vegan">
+        <i>Order Checkout</i>        
+    </div>
+    
+<div class="forms-container">
+    <!-- Contact Info -->
+    <div class="contact">  
+        <h2>Contact Info</h2>
+        <div class="input-box">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name">
+        </div>
+        
+        <div class="input-box">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address">
+        </div>
+        
+        <div class="input-box">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+        </div>
+        
+        <div class="input-box">
+            <label for="address">Delivery Address:</label>
+            <input type="text" id="address" name="address" placeholder="Enter your delivery address">
+        </div>
+    </div>
+
+    <!-- Payment Area -->
+    <div class="pay">
+        <h2>Payment Info</h2>    
+        <div class="input-box">
+            <label for="cardholder">Cardholder Name:</label>
+            <input type="text" id="cardholder" name="cardholder" placeholder="Enter the cardholder's name">
+        </div>
+        
+        <div class="input-box">
+            <label for="cardnumber">Card Number:</label>
+            <input type="text" id="cardnumber" name="cardnumber" placeholder="Enter your card number" maxlength="19">
+        </div>
+        
+        <div class="input-box">
+            <label for="expiry">Expiration Date:</label>
+            <input type="month" id="expiry" name="expiry" placeholder="MM/YY" required>
+        </div>
+        
+        <div class="input-box">
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" placeholder="Enter your CVV" maxlength="3" required>
+        </div>
+    </div>  
+</div>
+
+    <button id="cartButton" onclick="viewCart()">Place Order</button>
+    <div class="container">     
+        <div id="cart" class="cart">
+            <h2>Order Place. Thank you for shopping with us!</h2>
+            <a href=PAGETHATLINKSBACKTOHOMEPAGE target="_blank" class="submitbutton">Continue Shopping</a>
+        </div>
+    </div>
+
+
+
+  <script>
+    function moveToNextInput(event, nextInputId) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); 
+            const nextInput = document.getElementById(nextInputId);
+            if (nextInput) {
+                nextInput.focus();
+            }
+        }
+    }
+
+    document.getElementById('name').addEventListener('keydown', function(event) {
+        moveToNextInput(event, 'email');
+    });
+    
+    document.getElementById('email').addEventListener('keydown', function(event) {
+        moveToNextInput(event, 'phone');
+    });
+    
+    document.getElementById('phone').addEventListener('keydown', function(event) {
+        moveToNextInput(event, 'address');
+    });
+    
+    document.getElementById('address').addEventListener('keydown', function(event) {
+        moveToNextInput(event, 'cardholder');
+    });
+
+    document.getElementById('cardholder').addEventListener('keydown', function(event) {
+        moveToNextInput(event, 'cardnumber');
+    });
+
+    document.getElementById('cardnumber').addEventListener('keydown', function(event) {
+        moveToNextInput(event, 'cvv');
+    });
+    
+    
+    function viewCart() {
+        const div = document.getElementById('cart')
+        div.classList.toggle('show')
+        
+        var x = document.getElementById("cart");
+        if(x.style.display === "none"){
+            x.style.display = "block";
+        }
+        else{
+            x.style.display = "none";
+        }
+    }
+
+  </script>
+</body>
+</html>
+
