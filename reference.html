@@ -1,111 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan of Work Log</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>References and Plan of Work Log</title>
+  <style>
+      body {
+          font-family: Garamond, serif; /* Font changed to Garamond */
+          margin: 0;
+          padding: 20px 0;
+          background-color: #2E2B29; /* Primary background: dark taupe */
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border: 20px solid #7B853A; /* Add a border around the entire page */
+          border-radius: 10px;
+      }
+
+
+      .overlay {
+          background-color: #4A4137; /* Secondary background: earthy dark brown */
+          width: 90%;
+          max-width: 1000px;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+          margin-bottom: 30px;
+      }
+
+
+      table {
+          width: 80%;
+          border-collapse: separate;
+          border-spacing: 0;
+          margin: 20px auto;
+          font-size: 16px;
+          text-align: left;
+          background-color: #27221c; /* Accents: dark brown */
+          color: #E8E2D2; /* Main text: light ivory */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+          overflow: hidden;
+          border: 5px solid #7B853A; /* Border color changed to green */
+      }
+
+
+      th, td {
+          border: 1px solid #7B853A; /* Border matches the green color */
+          padding: 8px;
+      }
+
+
+      th {
+          background-color: #BFA07B; /* Headers: soft gold */
+          color: #27221c; /* Dark brown text for headers */
+      }
+
+
+      tr:nth-child(even) {
+          background-color: #4A4137; /* Secondary background for alternating rows */
+      }
+
+
+      caption {
+          font-size: 20px;
+          font-weight: bold;
+          margin-bottom: 10px;
+          color: #d3b794; /* Accents: olive green */
+      }
+
+
+      th:first-child, td:first-child {
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
+      }
+
+
+      th:last-child, td:last-child {
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px;
+      }
+
+
+      h1 {
+          text-align: center;
+          color: #BFA07B; /* Reference color */
+
+
+      }
+
+
+      ul,li {
+          line-height: 1.8;
+          color:#E8E2D2;
+      }
+
+
+      li {
+          font-size: 14px;
+      }
+
+
+      a {
+          color: #E8E2D2; /* Link color */
+          text-decoration: none;
+      }
+
+
+      a:hover {
+          text-decoration: underline;
+      }
+
+
+      nav {
+            background-color: #27221C; /* Dark brown */
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
             margin: 0;
-            padding: 20px 0;
-            background-color: #2E2B29; /* Primary background: dark taupe */
+            padding: 0;
             display: flex;
             justify-content: center;
         }
 
-        .overlay {
-            background-color: #4A4137; /* Secondary background: earthy dark brown */
-            width: 90%;
-            max-width: 1000px;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        nav ul li {
+            margin: 0 15px;
         }
 
-        table {
-            width: 80%;
-            border-collapse: separate;
-            border-spacing: 0;
-            margin: 20px auto;
-            font-size: 16px;
-            text-align: left;
-            background-color: #27221c; /* Accents: dark brown */
-            color: #E8E2D2; /* Main text: light ivory */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        th, td {
-            border: 1px solid #4A4137; /* Border matches secondary background */
-            padding: 8px;
-        }
-
-        th {
-            background-color: #BFA07B; /* Headers: soft gold */
-            color: #27221c; /* Dark brown text for headers */
-        }
-
-        tr:nth-child(even) {
-            background-color: #4A4137; /* Secondary background for alternating rows */
-        }
-
-        caption {
-            font-size: 20px;
+        nav ul li a {
+            text-decoration: none;
+            color: #BFA07B; /* Headers */
             font-weight: bold;
-            margin-bottom: 10px;
-            color: #7B853A; /* Accents: olive green */
         }
 
-        th:first-child, td:first-child {
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
+        nav ul li a:hover {
+            color: #7B853A; /* Olive green accent */
         }
+        .nav-link {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #bfa07b; /* Soft gold */
+            font-weight: bold;
+        }
+        .nav-link:hover {
+            color: #d4b28c; /* Light gold on hover
+      }
 
-        th:last-child, td:last-child {
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
-        }
-    </style>
+
+  </style>
 </head>
 <body>
-    <div class="overlay">
-        <table>
-            <caption>Plan of Work Log</caption>
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Task</th>
-                    <th>Time Involved</th>
-                    <th>Team Members Responsible</th>
-                    <th>Comments</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>October 3rd</td>
-                    <td>Idea Brainstorming</td>
-                    <td>2 hours</td>
-                    <td>BD, OF, TD, HZ, PK</td>
-                    <td>We met up to decide on what cuisine our restaurant would have and how we'd incorporate the theme.</td>
-                </tr>
-                <tr>
-                    <td>October 8th</td>
-                    <td>Work Delegation</td>
-                    <td>1 hour</td>
-                    <td>BD, OF, TD, HZ, PK</td>
-                    <td>We decided to split the work into different parts. One person would do the About Us page, another the Menu, and so on.</td>
-                </tr>
-                <tr>
-                    <td>October 9th</td>
-                    <td>Home Page</td>
-                    <td>3 hours</td>
-                    <td>BD</td>
-                    <td>BD started working on the home page. Made a navigation bar, contact us section, and more.</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="AboutUs.html">About Us</a></li>
+            <li><a href="Menu.html">Menu</a></li>
+            <li><a href="Preparation.html">Preparation</a></li>
+            <li><a href="reference.html">Reference Page</a></li>
+        </ul>
+    </nav>
+
+
+  <div class="overlay">
+      <h1>References</h1>
+      <ul>
+          <li>Author, Guest. 2021. “A Vegan Guide to Travelling in Southeast Asia.” South East Asia Backpacker. July 14, 2021. https://southeastasiabackpacker.com/vegan-southeast-asia/.</li>
+          <li>Bobek Ltd. 2024. “Food Images - Public Domain Pictures - Page 1.” Publicdomainpictures.net. 2024. https://www.publicdomainpictures.net/en/hledej.php?hleda=food.</li>
+          <li>Incutonez. 2013. “Merge Two HTML Files into Master HTML File.” Stack Overflow. November 8, 2013. https://stackoverflow.com/questions/19866929/merge-two-html-files-into-master-html-file.</li>
+          <li>Kelly-Shankar, Susanna. 2019. “Vegetarian & Vegan Survival Guide to Central Asia.” Curiosity Saves Travel. September 12, 2019. https://curiositysavestravel.com/vegetarian-vegan-food-survival-guide-central-asia/.</li>
+          <li>“Learn to Style HTML Using CSS.” 2019. MDN Web Docs. November 8, 2019. https://developer.mozilla.org/en-US/docs/Learn/CSS.</li>
+          <li>LH Editor. 2024. “FOOD & COOKING - Public Domain & CC.” Flickr. December 7, 2024. https://www.flickr.com/photos/141423754@N05/galleries/72157701833136384/.</li>
+          <li>Mehek. 2019. “What Makes a Vegetarian Middle Eastern Feast? - Map and Magnets.” Map and Magnets. June 13, 2019. https://mapandmagnets.com/what-makes-a-vegetarian-middle-eastern-feast/.</li>
+          <li>Persson, Henrik. 2023. “Kyrgyzstan: Vegan Oromo - Vegan Physicist.” Vegan Physicist. January 22, 2023. https://veganphysicist.com/kyrgyzstan-vegan-oromo/.</li>
+          <li>TasteAtlas. 2020. “100 Best Vegan Dishes in Asia.” Tasteatlas.com. TasteAtlas. April 28, 2020. https://www.tasteatlas.com/best-rated-plant-basedvegan-dish-in-asia.</li>
+          <li>“Thai & South-East Asian Vegan Recipes - Veganuary USA.” 2023. Veganuary. 2023. https://veganuary.com/en-us/recipes/categories/thai-south-east-asian-vegan-recipes-us/.</li>
+          <li>“The Sweetness of My Middle Eastern Vegan Kitchen.” 2021. Aramcoworld.com. September 2021. https://www.aramcoworld.com/articles/2021/the-sweetness-of-my-middle-eastern-vegan-kitchen.</li>
+          <li>Vercel. n.d. “Develop. Preview. Ship. For the Best Frontend Teams – Vercel.” Vercel.com. https://vercel.com/.</li>
+          <li>W3Schools. 2022. “HTML Tutorial.” W3schools.com. Refsnes Data. 2022. https://www.w3schools.com/html/default.asp.</li>
+          <li>Werneth, Wendy. 2016. “10 Vegan Foods Not to Miss in Southeast Asia - the Nomadic Vegan.” The Nomadic Vegan. March 3, 2016. https://www.thenomadicvegan.com/10-vegan-foods-not-to-miss-in-southeast-asia-2/.</li>
+      </ul>
+  </div>
+
+
+  <div class="overlay">
+      <table>
+          <caption>Plan of Work Log</caption>
+          <thead>
+              <tr>
+                  <th>Date</th>
+                  <th>Task</th>
+                  <th>Time Involved</th>
+                  <th>Team Members Responsible</th>
+                  <th>Comments</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>October 3rd</td>
+                  <td>Idea Brainstorming</td>
+                  <td>2 hours</td>
+                  <td>BD, OF, TD, HZ, PK</td>
+                  <td>We met up to decide on what cuisine our restaurant would have and how we'd incorporate the theme.</td>
+              </tr>
+              <tr>
+                  <td>October 8th</td>
+                  <td>Work Delegation</td>
+                  <td>1 hour</td>
+                  <td>BD, OF, TD, HZ, PK</td>
+                  <td>We decided to split the work into different parts. One person would do the About Us page, another the Menu, and so on.</td>
+              </tr>
+              <tr>
+                  <td>October 9th</td>
+                  <td>Home Page</td>
+                  <td>3 hours</td>
+                  <td>BD</td>
+                  <td>BD started working on the home page. Made a navigation bar, contact us section, and more.</td>
+              </tr>
+              <tr>
+                  <td>October 13th</td>
+                  <td>Building the Website</td>
+                  <td>7 hours</td>
+                  <td>BD, TD, HZ, OF, PK</td>
+                  <td>Everyone got together to build their respective parts of the website. We completed a lot of our coding and basic style decisions. </td>
+              </tr>
+              <tr>
+                  <td>October 18th</td>
+                  <td>Building the Website</td>
+                  <td>7 hours</td>
+                  <td>BD, TD, HZ, OF, PK</td>
+                  <td>Met again to make sure coding was going smoothly. Did some research on how to make a “Checkout” Page</td>
+              </tr>
+              <tr>
+                  <td>October 20th</td>
+                  <td>Making the website accessible</td>
+                  <td>4 hours</td>
+                  <td>BD, OF</td>
+                  <td>BD and OF met to figure out how to publish the website online. We decided on using Vercel.</td>
+              </tr>
+              <tr>
+                  <td>November 18th</td>
+                  <td>Completion of website</td>
+                  <td>4 hours</td>
+                  <td>BD, TD, HZ, OF, PK</td>
+                  <td>This date was our deadline to when we should have all of our individual coding done by. All the coding was complete by the 18th</td>
+              </tr>
+              <tr>
+                  <td>October 13th</td>
+                  <td>Publishing it</td>
+                  <td>4 hours</td>
+                  <td>BD, OF</td>
+                  <td>BD and OF linked the pages together in GitHub and published it via Vercel. Added in a Reference Page as well</td>
+              </tr>
+
+
+          </tbody>
+      </table>
+  </div>
 </body>
 </html>
+
+
+
+
+
