@@ -28,7 +28,9 @@
           box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
           margin-bottom: 30px;
       }
-
+      .overlay:first-of-type {
+        margin-top: 30px; /* Adds space only to the first overlay */
+    }
 
       table {
           width: 80%;
@@ -114,9 +116,13 @@
 
 
       nav {
-            background-color: #27221C; /* Dark brown */
-            padding: 10px;
-        }
+        width: calc(100% + 40px); /* Extend nav to match the page width plus border */
+        margin: -20px -20px 0; /* Counter the body's padding and align it with the border */
+        background-color: #27221C; /* Dark brown */
+        padding: 10px;
+        border-top-left-radius: 10px; /* Optional: smooth corner radius */
+        border-top-right-radius: 10px; /* Optional: smooth corner radius */
+    }
 
         nav ul {
             list-style: none;
@@ -259,10 +265,10 @@
           </tbody>
       </table>
   </div>
+  <div class="overlay">
+    <a href="https://drive.google.com/file/d/1yyvC-GgLwD0BWRxJ2p6oD5xfHEHX6ICf/view">Signed Copyright</a>
+  </div>
 </body>
 </html>
-
-
-
 
 
